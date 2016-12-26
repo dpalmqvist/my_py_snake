@@ -8,21 +8,15 @@ pygame.init()
 fpsClock = pygame.time.Clock()
 
 # set up the window
-DISPLAYSURF = pygame.display.set_mode((400, 500), 0, 32)
-pygame.display.set_caption('Snake!')
-
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 BOARDWIDTH = 400
 BOARDHEIGHT = 400
 
-HEADWIDTH = 10
-HEADHEIGHT = 10
+DISPLAYSURF = pygame.display.set_mode((BOARDWIDTH, BOARDHEIGHT + 100), 0, 32)
+pygame.display.set_caption('Snake!')
 
-headx = 200
-heady = 200
-direction = 'right'
 snake = Snake()
 snack = Snack(BOARDWIDTH, BOARDWIDTH, snake)
 point_font = pygame.font.Font(pygame.font.get_default_font(), 25)
@@ -38,7 +32,7 @@ while True:  # the main game loop
         if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
             pygame.quit()
             sys.exit()
-    pygame.draw.rect(DISPLAYSURF, BLACK, (0, 0, BOARDWIDTH, BOARDHEIGHT), 2)
+    pygame.draw.rect(DISPLAYSURF, BLACK, (0, 0, BOARDWIDTH, BOARDHEIGHT + 100), 2)
 
     snack.step()
     if not snack.alive():
