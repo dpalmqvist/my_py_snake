@@ -1,6 +1,7 @@
 from random import randrange
 import pygame
 
+
 class Snack:
     def __init__(self, maxx, maxy, snake):
         while True:
@@ -17,5 +18,4 @@ class Snack:
 
     def draw(self, surf):
         (x, y) = self.coord
-        pygame.draw.rect(surf, (255, 0, 0),
-                        (x, y, 10, 10))
+        pygame.draw.rect(surf, (255, 0, 0), (x, y, 10, 10))

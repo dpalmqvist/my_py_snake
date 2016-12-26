@@ -1,9 +1,10 @@
-import pygame, sys
+import pygame
+import sys
 from snake import Snake
 from snack import Snack
+
 pygame.init()
 
-FPS = 5 # frames per second setting
 fpsClock = pygame.time.Clock()
 
 # set up the window
@@ -24,9 +25,9 @@ heady = 200
 direction = 'right'
 snake = Snake()
 snack = Snack(BOARDWIDTH, BOARDWIDTH, snake)
-point_font = pygame.font.Font(pygame.font.get_default_font(), 15)
+point_font = pygame.font.Font(pygame.font.get_default_font(), 25)
 
-while True: # the main game loop
+while True:  # the main game loop
     DISPLAYSURF.fill(WHITE)
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
@@ -50,7 +51,7 @@ while True: # the main game loop
         sys.exit()
     snake.draw(DISPLAYSURF)
     snack.draw(DISPLAYSURF)
-    label = point_font.render("Score: %d"%snake.length, 0, (127,0,127))
+    label = point_font.render("Score: %d" % snake.length, 0, (127, 0, 127))
     DISPLAYSURF.blit(label, (10, 410))
     pygame.display.update()
     fpsClock.tick(5 + snake.length)

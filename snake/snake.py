@@ -1,5 +1,6 @@
 import pygame
 
+
 class Snake:
     def __init__(self):
         self.length = 1
@@ -48,12 +49,11 @@ class Snake:
 
     def draw(self, surf):
         for (x, y) in self.coords:
-            pygame.draw.rect(surf, (0, 0, 0),
-                            (x, y, 10, 10))
+            pygame.draw.rect(surf, (0, 0, 0), (x, y, 10, 10))
 
     def alive(self, maxx, maxy):
         (x, y) = self.coords[0]
-        if len(self.coords) > 0 and (x,y) in self.coords[1:]:
+        if len(self.coords) > 0 and (x, y) in self.coords[1:]:
             return False
         elif x < 0 or x >= maxx:
             return False
