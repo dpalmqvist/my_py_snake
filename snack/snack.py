@@ -7,7 +7,7 @@ class Snack:
             self.coord = (randrange(0, maxx, 10), randrange(0, maxy, 10))
             if self.coord not in snake.coords:
                 break
-        self.life = 100
+        self.life = 50
 
     def step(self):
         self.life -= 1
