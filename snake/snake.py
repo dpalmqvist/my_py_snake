@@ -1,4 +1,3 @@
-from pygame import K_LEFT, K_RIGHT
 import pygame
 
 class Snake:

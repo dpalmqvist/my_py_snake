@@ -50,7 +50,7 @@ while True: # the main game loop
         sys.exit()
     snake.draw(DISPLAYSURF)
     snack.draw(DISPLAYSURF)
-    label = point_font.render("Score: %d"%snake.length, 0, (0,255,0))
+    label = point_font.render("Score: %d"%snake.length, 0, (127,0,127))
     DISPLAYSURF.blit(label, (10, 410))
     pygame.display.update()
     fpsClock.tick(5 + snake.length)
