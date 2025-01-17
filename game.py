@@ -40,7 +40,7 @@ while True:  # the main game loop
 
     snake.step(snack)
     if not snake.alive(BOARDWIDTH, BOARDHEIGHT):
-        print snake.length
+        print(snake.length)
         pygame.quit()
         sys.exit()
     snake.draw(DISPLAYSURF)
